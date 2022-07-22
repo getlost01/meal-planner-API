@@ -1,0 +1,21 @@
+{
+  "name": "evolvefit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "aagam jain",
+  "license": "ISC",
+  "description": "An API app for meal planner",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.6"
+  }
+}

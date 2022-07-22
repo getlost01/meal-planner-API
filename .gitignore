@@ -1,0 +1,6 @@
+.env
+node_modules
+routes
+foodCategory.js
+foodData.js
+models
