@@ -10,11 +10,8 @@ app.listen(process.env.PORT || 3003, function(){
 });
 
 app.get('/',(req,res,next)=>{
-    res.send('hello');
+    res.send({ "Hello Message" : "Meal Planner Welcomes You 👍"});
 });
-
-import usersRoutes from './routes/postAPI/user.js';
-app.use('/user', usersRoutes);
 
 import foodData from'./foodData.js';
 app.get('/show',(req,res,next)=>{
@@ -26,3 +23,10 @@ app.use('/fooditems', foodItemsRoutes);
 
 import createMealRoutes from './routes/postAPI/createMeals.js';
 app.use('/createmeal', createMealRoutes);
+
+import usersRoutes from './routes/postAPI/user.js';
+app.use('/user', usersRoutes);
+
+app.get('*', function(req, res){
+    res.status(404).send({ "error" : "Not found 404"});
+});
