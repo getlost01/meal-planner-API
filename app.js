@@ -33,13 +33,13 @@ app.use('/addFoodItems', addItemsRoutes);
 
 // ------ Calling from Postman
 import foodItemsRoutes from './routes/postAPI/foodItem.js';
-app.use('/fooditems', foodItemsRoutes);
+app.use('/api/fooditems', foodItemsRoutes);
 
 import createMealRoutes from './routes/postAPI/createMeals.js';
-app.use('/createmeal', createMealRoutes);
+app.use('/api/createmeal', createMealRoutes);
 
 import usersRoutes from './routes/postAPI/user.js';
-app.use('/user', usersRoutes);
+app.use('/api/user', usersRoutes);
 
 app.get('/test',(req, res)=>{
     res.render('createmeal');

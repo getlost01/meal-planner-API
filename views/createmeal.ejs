@@ -17,16 +17,47 @@
 </head>
 
 <body >
+        <!-- Modal -->
+        <% for(var i=0;i<5;i++) {%> 
+        <div class="modal fade" id="staticBackdrop<%= i %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Select food for Meal <%= i %>.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                       <div class="mealItems">
+                            
+                       </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="mybtn" id="createMeal<%= i %>"><i class="fa-solid fa-circle-plus"></i> Add</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <% }%> 
+
         <div class="con">
             <div class="col-12 col-md-9 col-lg- 6 p-2 infoCon">
-                <h3 class="center">Add your food items for next process</h3>
-                <form action="/addFoodItems" method="post">
-                    <div class="foodItems">
-                       
+                <h3 class="center">Create you 5 meals for next process.  </h3>
+                <form action="/temp" method="post">
+                    <div class="mealCon">
 
+                        <% for(var i=0;i<5;i++) {%> 
+                            <div class="meals">
+                                <div class="head">Meal <%= i %>
+                                <div class="addBtn mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= i %>"><i class="fa-solid fa-circle-plus"></i> Add</div></div>
+                                <input type="text" name="meal<%= i %>" id="meal<%= i %>" class="hidden">
+                                <div class="showitems col-12">
+
+                                </div>
+                            </div>
+                        <% }%> 
+                           
                     </div>
-                    <div class="selectArea"> Total  <span class="totalClick">0</span>  has been selected yet.</div>
-                    <div class="info">Please select atleast 20 fooditems for next process.</div>
                     <input type="text" name="jsonData" id="jsonData"class="hidden">
                     <div class="center">
                         <input type="submit" value="Submit" disabled class="mybtn" id="mybtn">

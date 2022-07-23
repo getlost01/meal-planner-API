@@ -7,7 +7,6 @@ body{
 .row{
     margin: 0;
     padding: 10px;
-    background-color: aquamarine;
 }
 h3{
     font-size: 25px;
@@ -27,6 +26,7 @@ h3{
     letter-spacing: 1px;
     transition: all 0.2s ease;
     padding: 5px 10px;
+    user-select: none;
     transition: all 0.25s ease;
 }
 .mybtn:hover{
