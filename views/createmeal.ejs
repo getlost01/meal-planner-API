@@ -17,6 +17,9 @@
 </head>
 
 <body >
+
+    <form action="/temp" method="post">
+
         <!-- Modal -->
         <% for(var i=0;i<5;i++) {%> 
         <div class="modal fade" id="staticBackdrop<%= i+1 %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -27,9 +30,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                       <h6 class="text-center" style="color:#ff7300">Click food box to select.</h6>
+                       <h6 class="text-center" style="color:#2e63bd;">Click food box to select.</h6>
                        <div class="mealItems">
                             
+                       </div>
+                       <div class="personal-det">
+                            <select name="category<%= i+1 %>" id="category<%= i+1 %>" value="Breakfast">
+                                <option value="">Select meal category</option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Evening Snack">Evening Snack</option>
+                                <option value="Dinner">Dinner</option>
+                            </select>
+                            <input type="text" name="name<%= i+1 %>" id="name<%= i+1 %>" placeholder="Enter meal name">
                        </div>
                 </div>
                 <div class="modal-footer">
@@ -42,9 +55,9 @@
         <% }%> 
 
         <div class="con">
-            <div class="col-12 col-md-9 col-lg- 6 p-2 infoCon">
+            <div class="col-12 col-md-9 col-lg- 6 infoCon">
                 <h3 class="center">Create you 5 meals for next process.  </h3>
-                <form action="/temp" method="post">
+                
                     <div class="mealCon">
 
                         <% for(var i=0;i<5;i++) {%> 
@@ -52,6 +65,7 @@
                                 <div class="head">Meal <%= i+1 %>
                                 <div class="addBtn mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= i+1 %>"><i class="fa-solid fa-circle-plus"></i> Add</div></div>
                                 <input type="text" name="meal<%= i+1 %>" id="meal<%= i+1 %>" class="hidden">
+                                <div class="personalDet<%= i+1 %> personalDet"></div>
                                 <div class="showitems showitems<%= i+1 %> col-12">
 
                                 </div>
@@ -61,19 +75,24 @@
                     </div>
                     <input type="text" name="jsonData" id="jsonData"class="hidden">
                     <div class="center">
-                        <input type="submit" value="Submit" disabled class="mybtn" id="mybtn">
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Complete 5 meals for next process.">
+                        <input type="submit" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" value="Submit" disabled class="mybtn" id="mybtn">
+                        </span>
                     </div>
-                </form>
+      
             </div>
         </div>
-    
+
+    </form>
 
 
         <!-- JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="/js/createmeal.js"></script>
+        <script>$(document).ready(function(){ $('[data-toggle="popover"]').popover(); }); </script>
 
 </body>
 </html>

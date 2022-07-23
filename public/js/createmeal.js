@@ -30,19 +30,26 @@ async function loadFoodData() {
                 })
                 document.querySelector(`#meal${index+1}`).value = JSON.stringify(itemArray);
                 console.log(document.querySelector(`#meal${index+1}`).value);
+                document.querySelector(`.personalDet${index+1}`).innerHTML = `
+                    Category : ${document.querySelector(`#category${index+1}`).value} &nbsp; &nbsp; &nbsp;
+                    Name : ${document.querySelector(`#name${index+1}`).value}
+                `
+                checkBtn();
             })
         })
 }
 loadFoodData();
 
 var inputEle = ['#meal1','#meal2','#meal3','#meal4','#meal5'];
-inputEle.forEach( ele => {
-    document.querySelector(ele).addEventListener('input',()=>{
-        var count = 0;
-        inputEle.forEach(obj =>{
-            if(document.querySelector(ele).value)
-            ++count;
-        })
-        console.log(count);
+function checkBtn(){
+    var count = 0;
+    inputEle.forEach(obj =>{
+        if(document.querySelector(obj).value && document.querySelector(obj).value!='[]')
+        ++count;
     })
-});
+    if(count>=5)
+        document.querySelector("#mybtn").disabled = false;
+    else
+        document.querySelector("#mybtn").disabled = true;
+    console.log(count);
+}

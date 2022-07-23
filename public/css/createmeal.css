@@ -54,6 +54,7 @@ h3{
     background-color: white;
     box-shadow: 0 2px 5px #777;
     border-radius: 5px;
+    padding: 0 15px;
 }
 .selectArea{
     margin: 0;
@@ -76,6 +77,11 @@ h3{
 }
 .hidden{
     display: none;
+}
+.personalDet{
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
 }
 
 /* ---------- specific div section  */
@@ -133,7 +139,7 @@ h3{
     overflow: hidden;
     padding: 0;
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 .mealCon .meals .head{
     font-size: 18px;
@@ -152,7 +158,7 @@ h3{
     width: fit-content;
 }
 .mealCon .meals .showitems{
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -165,6 +171,21 @@ h3{
     color: white;
     font-weight: 500;
     transition: all 0.2s ease;
+}
+.personal-det{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personal-det select , .personal-det input{
+    padding: 5px 10px;
+    outline: none;
+    height: 40px;
+    margin: 20px;
+    background-color: #f6f6f6;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 
