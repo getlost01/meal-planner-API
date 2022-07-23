@@ -1,3 +1,5 @@
+// Note: this part of code is only for postman or other API post request sending plateforms
+
 import express from "express";
 import User from'../../models/user.js';
 import mealItems from'../../models/meal.js';

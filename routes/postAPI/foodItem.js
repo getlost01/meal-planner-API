@@ -1,3 +1,5 @@
+// Note: this part of code is only for postman or other API post request sending plateforms
+
 import express from "express";
 import foodItems from'../../models/foodItems.js';
 const router = express.Router();

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/uiet-connect.appspot.com/o/abitIcon.png?alt=media&token=bf2d1bb1-eb87-48cf-89bd-7adfefc63ba9" type="image/x-icon">
+    <title>Meal pLanner</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" i
+    ntegrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/createmeal.css">
+</head>
+
+<body >
+        <div class="con">
+            <div class="col-12 col-md-9 col-lg- 6 p-2 infoCon">
+                <h3 class="center">Add your food items for next process</h3>
+                <form action="/addFoodItems" method="post">
+                    <div class="foodItems">
+                       
+
+                    </div>
+                    <div class="selectArea"> Total  <span class="totalClick">0</span>  has been selected yet.</div>
+                    <div class="info">Please select atleast 20 fooditems for next process.</div>
+                    <input type="text" name="jsonData" id="jsonData"class="hidden">
+                    <div class="center">
+                        <input type="submit" value="Submit" disabled class="mybtn" id="mybtn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+
+
+        <!-- JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+        crossorigin="anonymous"></script>
+        <script src="/js/createmeal.js"></script>
+
+</body>
+</html>

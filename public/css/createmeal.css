@@ -1,0 +1,66 @@
+body{
+    background-color: #f5f5f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ---------- universal div section  */
+.row{
+    margin: 0;
+    padding: 10px;
+    background-color: aquamarine;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.mybtn{
+    border: 2px solid #e16805;
+    border-radius: 5px;
+    background-color: #f48225;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    padding: 5px 10px;
+    transition: all 0.25s ease;
+}
+.mybtn:hover{
+    box-shadow: 0 2px 5px #777;
+}
+.mybtn:active{
+    transform: scale(0.96);
+}
+.mybtn:disabled{
+    border: 1px solid #ff7300;
+    background-color: #ff8e31;
+    cursor: not-allowed;
+}
+.mybtn:disabled:hover{
+    box-shadow: none;
+}
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 15px;
+}
+.hidden{
+    display: none;
+}
+
+/* ---------- specific div section  */
+
+@media only screen and (max-width: 1000px) {
+    .con{
+        height: auto;
+        margin: 20px 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+    h3{
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
