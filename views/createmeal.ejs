@@ -19,21 +19,22 @@
 <body >
         <!-- Modal -->
         <% for(var i=0;i<5;i++) {%> 
-        <div class="modal fade" id="staticBackdrop<%= i %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop<%= i+1 %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Select food for Meal <%= i %>.</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Select food for Meal <%= i+1 %>.</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                       <h6 class="text-center" style="color:#ff7300">Click food box to select.</h6>
                        <div class="mealItems">
                             
                        </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="mybtn" id="createMeal<%= i %>"><i class="fa-solid fa-circle-plus"></i> Add</button>
+                <button type="button" class="mybtn" id="createMeal<%= i+1 %>" data-bs-dismiss="modal"><i class="fa-solid fa-circle-plus"></i> Add</button>
                 </div>
             </div>
             </div>
@@ -48,10 +49,10 @@
 
                         <% for(var i=0;i<5;i++) {%> 
                             <div class="meals">
-                                <div class="head">Meal <%= i %>
-                                <div class="addBtn mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= i %>"><i class="fa-solid fa-circle-plus"></i> Add</div></div>
-                                <input type="text" name="meal<%= i %>" id="meal<%= i %>" class="hidden">
-                                <div class="showitems col-12">
+                                <div class="head">Meal <%= i+1 %>
+                                <div class="addBtn mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= i+1 %>"><i class="fa-solid fa-circle-plus"></i> Add</div></div>
+                                <input type="text" name="meal<%= i+1 %>" id="meal<%= i+1 %>" class="hidden">
+                                <div class="showitems showitems<%= i+1 %> col-12">
 
                                 </div>
                             </div>
