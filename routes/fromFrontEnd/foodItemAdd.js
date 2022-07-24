@@ -18,8 +18,7 @@ router.post('/',async(req,res,next)=>{
             const newUser = new foodItems( itemMap[name] );
             const result = newUser.save();
         })
-        const updated = { "Message" : "Yay your data have been added👍" , data}
-        res.send(updated);
+        res.render('createmeal');
     } catch (error) {
     next(error)
     }

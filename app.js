@@ -31,6 +31,9 @@ app.get('/show',(req,res,next)=>{
 import addItemsRoutes from './routes/fromFrontEnd/foodItemAdd.js';
 app.use('/addFoodItems', addItemsRoutes);
 
+import createMealItemRoutes from './routes/fromFrontEnd/createMealItems.js';
+app.use('/createMealItem', createMealItemRoutes);
+
 // ------ Calling from Postman
 import foodItemsRoutes from './routes/postAPI/foodItem.js';
 app.use('/api/fooditems', foodItemsRoutes);

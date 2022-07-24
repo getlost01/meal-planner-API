@@ -9,12 +9,7 @@ const category = ["Breakfast", "Lunch", "Evening Snack", "Dinner"];
 
 router.get('/',async(req,res)=>{
     mealItems.find({}, function(err, mealItem) {
-        var itemMap = {};
-    
-        mealItem.forEach(function(item) {
-          itemMap[item.name] = item;
-        });
-        res.send(itemMap);
+        res.send(mealItem);
     });
 })
 

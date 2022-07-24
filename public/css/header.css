@@ -1,0 +1,71 @@
+.header{
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progressBar{
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+.progressBar .progressInner{
+    display: flex;
+    position: relative;
+    width: 110px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.progressBar .progressInner .dot{
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.progressBar .progressInner .line{
+    position: absolute;
+    left: 66px;
+    top: 11px;
+    width: 85px;
+    height: 3px;
+    border-radius: 10px;
+}
+.bg-blueCus{
+    background-color: #2e63bd;
+}
+.bor-blueCus{
+    border: 2px solid #2e63bd;color: #2e63bd;
+}
+.bg-greyCus{
+    background-color: #777;
+}
+.bor-greyCus{
+    border: 2px solid #777;color: #777;
+}
+.text-blueCus{ 
+    color: #2e63bd;
+}
+.text-greyCus{ 
+    color: #777;
+}
+.progressBar .progressInner label{
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 3px;
+}
+@media only screen and (max-width: 500px) {
+    .progressBar .progressInner .line{
+        display: none;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .progressBar .progressInner label{
+        display: none;
+    }
+}

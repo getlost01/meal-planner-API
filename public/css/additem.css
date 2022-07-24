@@ -46,9 +46,7 @@ h3{
 .con{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 15px;
+    padding: 20px 10px;
 }
 .infoCon{
     background-color: white;
@@ -127,10 +125,6 @@ h3{
     opacity: 1;
 }
 @media only screen and (max-width: 1000px) {
-    .con{
-        height: auto;
-        margin: 20px 0;
-    }
     .foodItems .items{
         border-radius: 5px;
         padding: 10px;
