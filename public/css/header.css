@@ -20,7 +20,7 @@ h3{
 .mybtn{
     border: 2px solid #e16805;
     border-radius: 5px;
-    background-color: #f48225;
+    background-color: #f87d19;
     color: white;
     font-weight: 600;
     letter-spacing: 1px;
@@ -112,6 +112,41 @@ h3{
     font-size: 12px;
     font-weight: 700;
     margin-top: 3px;
+}
+
+.loading-container {
+    height: 90vh;
+    width: 100%;
+    background-color: #f6f6f6;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.spinner {
+    height: 14rem;
+    width: 14rem;
+    border: 20px solid #588be3;
+    border-left: 20px solid #1c4997;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin infinite 1.5s linear;
+}
+
+.spinner-text {
+    position: absolute;
+    font-size: 14px;
+    color: #2e63bd;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 @media only screen and (max-width: 500px) {
     .progressBar .progressInner .line{

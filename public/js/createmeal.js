@@ -53,3 +53,8 @@ function checkBtn(){
         document.querySelector("#mybtn").disabled = true;
     console.log(count);
 }
+
+document.querySelector("#mybtn").addEventListener('click',()=>{
+    document.querySelector(".loading-container").style.display="flex";
+    document.querySelector(".con").classList.add("hidden");
+})

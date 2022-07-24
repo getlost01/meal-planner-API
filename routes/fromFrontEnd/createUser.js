@@ -27,11 +27,10 @@ router.post('/',async(req,res)=>{
         obj[`${day1}`][`${ele}`] = mealItemMap[data[`category${ele}0`]];
         obj[`${day2}`][`${ele}`] = mealItemMap[data[`category${ele}1`]];
     });
-    console.log(obj)
 
     const newUser = new User({ name: data.name ,  calorieRequirement: data.calories, mealPlan: obj});
     const result = await newUser.save();
-    res.send(result);
+    setTimeout(()=>{ res.send(result);}, 3000)
     });
 })
 
