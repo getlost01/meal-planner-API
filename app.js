@@ -1,7 +1,6 @@
 import express from "express";
 import connectdb from './config/db.js';
-import ejs from 'ejs'
-import path from 'path'
+import path from 'path';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
@@ -34,7 +33,10 @@ app.use('/addFoodItems', addItemsRoutes);
 import createMealItemRoutes from './routes/fromFrontEnd/createMealItems.js';
 app.use('/createMealItem', createMealItemRoutes);
 
-// ------ Calling from Postman
+import createUserItemRoutes from './routes/fromFrontEnd/createUser.js';
+app.use('/createUser', createUserItemRoutes);
+
+// ------ APIs
 import foodItemsRoutes from './routes/postAPI/foodItem.js';
 app.use('/api/fooditems', foodItemsRoutes);
 
@@ -45,7 +47,7 @@ import usersRoutes from './routes/postAPI/user.js';
 app.use('/api/user', usersRoutes);
 
 app.get('/test',(req, res)=>{
-    res.render('createmeal');
+    res.render('createuser');
 })
 
 app.post('/temp',(req,res)=>{

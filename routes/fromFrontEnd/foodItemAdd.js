@@ -18,7 +18,9 @@ router.post('/',async(req,res,next)=>{
             const newUser = new foodItems( itemMap[name] );
             const result = newUser.save();
         })
-        res.render('createmeal');
+        
+        const myTimeout = setTimeout(()=>{res.render('createmeal');}, 3000)
+        
     } catch (error) {
     next(error)
     }
