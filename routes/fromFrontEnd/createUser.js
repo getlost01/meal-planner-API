@@ -21,7 +21,7 @@ router.post('/',async(req,res)=>{
     obj[`${day2}`] = {};
     mealItems.find({}, async function(err, mealItem) {
         mealItem.forEach(function(item) {
-            mealItemMap[item._id] = { name: item.name , foodItems: item.foodItems};
+            mealItemMap[item._id] = { id: item._id, name: item.name , foodItems: item.foodItems};
         });
     category.forEach( ele => {
         obj[`${day1}`][`${ele}`] = mealItemMap[data[`category${ele}0`]];
@@ -30,7 +30,7 @@ router.post('/',async(req,res)=>{
 
     const newUser = new User({ name: data.name ,  calorieRequirement: data.calories, mealPlan: obj});
     const result = await newUser.save();
-    setTimeout(()=>{ res.send(result);}, 3000)
+    setTimeout(()=>{ res.send(result);}, 1000)
     });
 })
 

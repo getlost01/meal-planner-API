@@ -30,7 +30,3 @@ async function loadFoodData() {
 }
 loadFoodData();
 
-document.querySelector("#mybtn").addEventListener('click',()=>{
-    document.querySelector(".loading-container").style.display="flex";
-    document.querySelector(".con").classList.add("hidden");
-})

@@ -37,12 +37,6 @@
         </div>
     </div>
 
-    <div class="loading-container">
-        <p class="spinner-text">
-            loading...
-        </p>
-        <div class="spinner"></div>
-    </div>
 
     <form action="/createUser" method="post">
         <div class="con">
@@ -50,7 +44,7 @@
                 <h3 class="center"> Make meal plan for user. </h3>
                     <div class="dataInput">                                
                         <input type="text" name="name" required placeholder="Enter user name">
-                        <input type="number" name="calories" required placeholder="Enter calories requirement.">
+                        <input type="number" name="calories" min="1000" max="5000" required placeholder="Enter calories requirement.">
                     </div>
                     <div class="mealCon">
 

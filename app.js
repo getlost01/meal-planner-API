@@ -35,6 +35,10 @@ app.use('/createMealItem', createMealItemRoutes);
 
 import createUserItemRoutes from './routes/fromFrontEnd/createUser.js';
 app.use('/createUser', createUserItemRoutes);
+//------- Algo
+
+import algoRoutes from './routes/algo/optimizealgo.js';
+app.use('/mealplan', algoRoutes);
 
 // ------ APIs
 import foodItemsRoutes from './routes/postAPI/foodItem.js';
