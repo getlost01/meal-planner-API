@@ -38,7 +38,7 @@ app.use('/createUser', createUserItemRoutes);
 //------- Algo
 
 import algoRoutes from './routes/algo/optimizealgo.js';
-app.use('/mealplan', algoRoutes);
+app.use('/api/mealplan', algoRoutes);
 
 // ------ APIs
 import foodItemsRoutes from './routes/postAPI/foodItem.js';
@@ -51,7 +51,7 @@ import usersRoutes from './routes/postAPI/user.js';
 app.use('/api/user', usersRoutes);
 
 app.get('/test',(req, res)=>{
-    res.render('createuser');
+    res.render('mealshow');
 })
 
 app.post('/temp',(req,res)=>{

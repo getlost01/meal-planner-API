@@ -1,0 +1,145 @@
+.infoCon{
+    background-color: white;
+    box-shadow: 0 2px 5px #777;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+.dataShow{
+    display: flex;
+    justify-content: center;
+}
+.dataShow div{
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 10px;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dataShow .bold{
+    font-weight: 700;
+    font-family: 16px;
+}
+.info{
+    text-align: center;
+    font-size: 13px;
+    font-family: 10px;
+    color: #2e63bd;
+    font-weight: 700;
+    padding: 3px;
+}
+.hidden{
+    display: none;
+}
+.personalDet{
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+.infoData{
+    color: #01286a;
+    text-decoration: none;
+}
+.fooditems{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.fooditems .row{
+    padding:0;
+}
+.table-box{
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    border-left: 1px solid #777;
+}
+
+/* ---------- specific div section  */
+
+.mealCon .meals{
+    width: 100%;
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+.mealCon .meals .head{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+.mealCon .meals .showitems{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mealCon .meals .selectionBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+.mealCon .meals .selectionBox .title{
+    background-color: #2e63bd;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.mealCon .meals .selectionBox .select{
+    padding: 5px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2e63bd;
+    border-radius: 0;
+    border-left: 2px solid #2e63bd;
+    border-right: 2px solid #2e63bd;
+    height:100%;
+}
+.mealCon .meals .selectionBox  .totalCal{
+    font-size: 12px;
+    font-weight: 700;
+    color: #2e63bd;
+    padding: 5px;
+    border-top: 1px solid #2e63bd;
+    border-left: 2px solid #2e63bd;
+    border-right: 2px solid #2e63bd;
+    border-bottom: 2px solid #2e63bd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    h3{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    h3{
+        font-size: 15px;
+        font-weight: 500;
+    }
+}

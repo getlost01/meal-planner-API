@@ -28,6 +28,7 @@ router.get('/',async(req,res)=>{
               }
             });
                         var mealplan = data[username].mealPlan[0];
+                        var usedItems = {};
                         var caloriesData = {};
                         for (let key in mealplan){
                             caloriesData[key] = {};
@@ -38,10 +39,12 @@ router.get('/',async(req,res)=>{
                                 var tempArr = [];
                                 items.forEach(ele =>{
                                         tempArr.push([ele,foodData[ele].totalcal])
+                                        usedItems[ele] = foodData[ele];
                                 })
                                 tempArr.sort(function(a,b){return b[1] - a[1]});
                                 var calReqCat = category[cat];
                                 tempArr.forEach(ele =>{
+
                                     var quan = (calReqCat/ele[1]);
                                     if(quan - parseInt(quan) >= 0.75) quan = parseInt(quan)+0.75;
                                     else if(quan - parseInt(quan) >= 0.50) quan = parseInt(quan)+0.50;
@@ -51,12 +54,13 @@ router.get('/',async(req,res)=>{
                                     calReqCat -= quan*ele[1];
                                     tempcalReq -= quan*ele[1]; 
 
+                                    if(quan)
                                     mainArray.push({"foodItem":ele,"quantity":quan,"totalCalories":quan*ele[1]})
                                 })
                                 caloriesData[key][cat] = mainArray;
                             })
                     }
-                    setTimeout(()=>{ res.send(caloriesData);}, 1000)
+                    res.send({"username":username,"caloriesRequired":calReq,"foodData":usedItems,"caloriesData":caloriesData});
         });
     });
 })

@@ -13,38 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/createuser.css">
+    <link rel="stylesheet" href="/css/mealshow.css">
     <link rel="stylesheet" href="/css/header.css">
 </head>
 
 <body >
-    <div class="header row">
-        <div class="progressBar">
-                <div class='progressInner'>
-                    <div class="line bg-blueCus"></div>
-                    <div class="dot bor-blueCus">1</div>
-                 <label class="text-blueCus">Add Food-item</label>
-                </div>
-                <div class='progressInner'>
-                    <div class="line bg-blueCus"></div>
-                    <div class="dot bor-blueCus">2</div>
-                 <label class="text-blueCus">Create Meal</label>
-                </div>
-                <div class='progressInner'>
-                    <div class="dot bor-blueCus">3</div>
-                 <label class="text-blueCus">Create User </label>
-                </div>
-        </div>
-    </div>
 
-
-    <form action="/createUser" method="post">
         <div class="con">
-            <div class="col-12 col-md-9 col-lg- 6 infoCon">
-                <h3 class="center"> Make meal plan for user. </h3>
-                    <div class="dataInput">                                
-                        <input type="text" name="name" required placeholder="Enter user name">
-                        <input type="number" name="calories" min="1000" max="5000" required placeholder="Enter calories requirement/day">
+            <div class="col-12 col-md-11 infoCon">
+                <h3 class="center"> Meal Planner </h3>
+                    <div class="dataShow row">                                
+                        <div class="col-12 col-lg-4 col-md-5">Created for: &nbsp<span class="bold" id="name"></span></div>
+                        <div class="col-12 col-lg-4 col-md-5">Daily calories requirement:  &nbsp<span class="bold" id="calories"></span></div>
                     </div>
                     <div class="mealCon">
 
@@ -52,28 +32,34 @@
                             <div class="meals">
                                 <div class="head">Day <%= i+1 %></div>
                                 <input type="text" name="meal<%= i+1 %>" id="meal<%= i+1 %>" class="hidden">
-                                <div class="personalDet<%= i+1 %> personalDet"></div>
                                 <div class="showitems row">
-
+                                    
                                 </div>
                             </div>
                         <% }%> 
                            
                     </div>
-                    <a class="infoData" href="/api/createmeal" target="_blank">View meal data</a>
-                    <div class="center mb-1">
-                         <input type="submit" value="Submit" class="mybtn" id="mybtn">
-                    </div>
             </div>
         </div>
-    </form>
 
+        <div class="con">
+            <div class="col-12 col-md-9 col-lg- 6 infoCon">
+                <h3 class="center">Calorie value of food items.</h3>
+                <div class="fooditems">
+                    <div class="row" style="font-weight: 700; border-bottom:1px solid #777;">
+                        <div class="col-4 table-box">Fooditems</div>
+                        <div class="col-2 table-box">Calories (/100g)</div>
+                        <div class="col-2 table-box">Protiens</div>
+                        <div class="col-4 table-box">Total Calories(/100g)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
-        <script src="/js/createuser.js"></script>
-
+        <script src="/js/mealshow.js"></script>
 </body>
 </html>
