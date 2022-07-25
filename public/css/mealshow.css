@@ -50,8 +50,11 @@
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;
-    border: 1px solid;
+    border: 1px solid #777;
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
     border-radius: 5px;
+    color: #444;
 }
 .fooditems .row{
     padding:0;
@@ -61,6 +64,18 @@
     padding: 5px;
     text-align: center;
     border-left: 1px solid #777;
+    border-right: 1px solid #777;
+}
+.assumptions{
+    font-weight: 600;
+    font-size: 14px;
+}
+.assumptions i{
+    font-weight: 800;
+    color: #2e63bd;
+}
+.assumptions div{
+    margin-bottom: 10px;
 }
 
 /* ---------- specific div section  */
@@ -111,7 +126,7 @@
     width: 100%;
     font-size: 12px;
     font-weight: 600;
-    color: #2e63bd;
+    color: #444;
     border-radius: 0;
     border-left: 2px solid #2e63bd;
     border-right: 2px solid #2e63bd;
@@ -120,7 +135,7 @@
 .mealCon .meals .selectionBox  .totalCal{
     font-size: 12px;
     font-weight: 700;
-    color: #2e63bd;
+    color: #444;
     padding: 5px;
     border-top: 1px solid #2e63bd;
     border-left: 2px solid #2e63bd;

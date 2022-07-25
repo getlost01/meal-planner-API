@@ -30,7 +30,7 @@ router.post('/',async(req,res)=>{
 
     const newUser = new User({ name: data.name ,  calorieRequirement: data.calories, mealPlan: obj});
     const result = await newUser.save();
-    setTimeout(()=>{ res.send(result);}, 1000)
+    res.render('mealshow');
     });
 })
 

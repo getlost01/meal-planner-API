@@ -48,5 +48,10 @@ async function loadFoodData() {
         </div>`
     }
 }
-loadFoodData();
 
+document.querySelector(".loading-container").style.display="flex";
+var allCon = document.querySelectorAll(".con");
+setTimeout(()=>{document.querySelector(".loading-container").style.display="none";
+allCon.forEach(ele => { ele.classList.remove("hidden")});  }, 1000)
+
+loadFoodData();

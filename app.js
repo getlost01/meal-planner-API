@@ -40,6 +40,8 @@ app.use('/createUser', createUserItemRoutes);
 import algoRoutes from './routes/algo/optimizealgo.js';
 app.use('/api/mealplan', algoRoutes);
 
+app.get('/mealshow',(req, res)=>{ res.render('mealshow');})
+
 // ------ APIs
 import foodItemsRoutes from './routes/postAPI/foodItem.js';
 app.use('/api/fooditems', foodItemsRoutes);
@@ -50,9 +52,7 @@ app.use('/api/createmeal', createMealRoutes);
 import usersRoutes from './routes/postAPI/user.js';
 app.use('/api/user', usersRoutes);
 
-app.get('/test',(req, res)=>{
-    res.render('mealshow');
-})
+
 
 app.post('/temp',(req,res)=>{
     console.log(req.body);

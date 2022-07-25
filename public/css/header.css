@@ -12,6 +12,9 @@ h3{
     font-size: 25px;
     margin: 10px 0;
 }
+h5{
+    margin: 5px 0;
+}
 .center{
     display: flex;
     justify-content: center;
