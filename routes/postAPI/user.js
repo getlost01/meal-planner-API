@@ -7,6 +7,17 @@ import foodItems from'../../models/foodItems.js';
 
 const router = express.Router();
 
+router.get('/',async(req,res)=>{
+    User.find({}, function(err, user) {
+        var itemMap = {};
+    
+        user.forEach(function(item) {
+          itemMap[item.name] = item;
+        });
+        res.send(itemMap);
+    });
+})
+
 router.post('/',async(req,res)=>{
     User.deleteMany({},function(err) {
         if (err) console.log(err)

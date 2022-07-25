@@ -52,12 +52,6 @@ app.use('/api/createmeal', createMealRoutes);
 import usersRoutes from './routes/postAPI/user.js';
 app.use('/api/user', usersRoutes);
 
-
-
-app.post('/temp',(req,res)=>{
-    console.log(req.body);
-    res.redirect('/test');
-})
 app.get('*', (req, res)=>{
-    res.status(404).send({ "error" : "Not found 404"});
+    res.render('error');
 });
