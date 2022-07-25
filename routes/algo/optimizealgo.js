@@ -32,7 +32,7 @@ router.get('/',async(req,res)=>{
                         var caloriesData = {};
                         for (let key in mealplan){
                             caloriesData[key] = {};
-                            var tempcalReq = calReq;
+                            var tempcalReq = calReq; 
                             mealCategories.forEach(cat =>{
                                 var items = mealplan[key][cat].foodItems;
                                 var mainArray = [];
@@ -52,7 +52,7 @@ router.get('/',async(req,res)=>{
                                     else quan = parseInt(quan);
                                     
                                     calReqCat -= quan*ele[1];
-                                    tempcalReq -= quan*ele[1]; 
+                                    tempcalReq -= quan*ele[1];  
 
                                     if(quan)
                                     mainArray.push({"foodItem":ele,"quantity":quan,"totalCalories":quan*ele[1]})
