@@ -32,7 +32,11 @@
                 </div>
         </div>
     </div>
-    <form action="/createMealItem" method="post">
+
+        <% if(local.response === "patch") {%> 
+            <form action="/createMealItem" method="post">
+        <% } else {%>
+            <form action="/createmealpatch" method="post"><%}%>
 
         <!-- Modal -->
         <% for(var i=0;i<5;i++) {%> 
@@ -87,6 +91,7 @@
                                 <div class="head">Meal <%= i+1 %>
                                 <div class="addBtn mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= i+1 %>"><i class="fa-solid fa-circle-plus"></i> Add</div></div>
                                 <input type="text" name="meal<%= i+1 %>" id="meal<%= i+1 %>" class="hidden">
+                                <input type="text" name="id<%= i+1 %>" id="id<%= i+1 %>" class="hidden">
                                 <div class="personalDet<%= i+1 %> personalDet"></div>
                                 <div class="showitems showitems<%= i+1 %> col-12">
 
@@ -110,7 +115,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
-        <script src="/js/createmeal.js"></script>
+
+        <% if(local.response === "patch") {%> 
+            <script src="/js/createmealpatch.js"></script>
+        <% } else {%>
+            <script src="/js/createmeal.js"></script><%}%>
 
 </body>
 </html>

@@ -39,8 +39,8 @@
             <div class="col-12 col-md-9 infoCon">
                 <h3 class="center"> Make meal plan for user. </h3>
                     <div class="dataInput">                                
-                        <input type="text" name="name" required placeholder="Enter user name">
-                        <input type="number" name="calories" min="1000" max="5000" required placeholder="Enter calories requirement/day">
+                        <input type="text" name="name" id="name" required placeholder="Enter user name">
+                        <input type="number" name="calories" min="1000" max="5000" id="calories" required placeholder="Enter calories requirement/day">
                     </div>
                     <div class="mealCon">
 
@@ -69,7 +69,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
-        <script src="/js/createuser.js"></script>
+        <% if(local.response === "patch") {%> 
+        <script src="/js/createuserpatch.js"></script>
+        <% } else {%>
+        <script src="/js/createuser.js"></script> <%}%>
+
 
 </body>
 </html>
