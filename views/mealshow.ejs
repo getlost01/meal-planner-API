@@ -1,8 +1,5 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/uiet-connect.appspot.com/o/logo.png?alt=media&token=35494484-e04a-4b21-aa83-3e52d0db8dc7" type="image/x-icon">
     <title>Meal Planner</title>
     <!-- CSS -->
@@ -35,11 +32,12 @@
 
                         <% for(var i=0;i<2;i++) {%> 
                             <div class="meals">
-                                <div class="head">Day <%= i+1 %></div>
+                                <div class="head head<%= i %>"></div>
                                 <input type="text" name="meal<%= i+1 %>" id="meal<%= i+1 %>" class="hidden">
                                 <div class="showitems row">
                                     
                                 </div>
+                                <div class="tail tail<%= i %>"></div>
                             </div>
                         <% }%> 
                            
@@ -48,7 +46,7 @@
         </div>
 
         <div class="con hidden">
-            <div class="col-12 col-md-9 col-lg- 6 infoCon">
+            <div class="col-12 col-md-9 infoCon">
                 <h5 class="center">Assumptions</h5>
                 <div class="assumptions">
                     <div><i class="fa-solid fa-right-long"></i> 1g protein has 4 calories.</div>
@@ -56,12 +54,15 @@
                     <div><i class="fa-solid fa-right-long"></i> 35-40% of daily calories for lunch.</div>
                     <div><i class="fa-solid fa-right-long"></i> 5-10% of daily calories for an evening snack.</div>
                     <div><i class="fa-solid fa-right-long"></i> 25-30% of daily calories for dinner.</div>
+                    <div><i class="fa-solid fa-right-long"></i> Tolerance in calculating calories is ± 100 cal.</div>
+                    <div><i class="fa-solid fa-right-long"></i> This web app currently work only for these <a href="https://drive.google.com/file/d/1hpS57DvhMVJ_K3q38O6OsD3gQV7RqzqT/view?usp=sharing" target="_blank">33 food items.</a></div>
+                    
                 </div>
             </div>
         </div>
 
         <div class="con hidden">
-            <div class="col-12 col-md-9 col-lg- 6 infoCon">
+            <div class="col-12 col-md-9 infoCon">
                 <h5 class="center">Calorie value of food items.</h5>
                 <div class="fooditems">
                     <div class="row" style="font-weight: 700; border-bottom:1px solid #777;">
@@ -75,14 +76,14 @@
         </div>
 
         <div class="con hidden">
-            <div class="col-12 col-md-9 col-lg- 6 infoCon">
+            <div class="col-12 col-md-9 infoCon">
                 <h5 class="center">APIs</h5>
                 <div class="assumptions">
-                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/fooditems" target="_blank">/api/fooditems</a> Retrieve a json of current 20 or more selected food items.</div>
-                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/createmeal" target="_blank">/api/createmeal</a> Retrieve a json of 5 current meals.</div>
-                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/user" target="_blank">/api/user</a> Retrieve a json of current user data.</div>
-                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/mealplan" target="_blank">/api/mealplan</a> Retrieve a json of current meal plan.</div>
-                    <div><i class="fa-solid fa-right-long"></i> <a href="/show" target="_blank">/show</a> Show all 33 default food item data.</div>
+                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/fooditems" target="_blank">/api/fooditems</a> Retrieve a JSON of current 20 or more selected food items.</div>
+                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/createmeal" target="_blank">/api/createmeal</a> Retrieve a JSON of 5 current meals.</div>
+                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/user" target="_blank">/api/user</a> Retrieve a JSON of current user data.</div>
+                    <div><i class="fa-solid fa-right-long"></i> <a href="/api/mealplan" target="_blank">/api/mealplan</a> Retrieve a JSON of current meal plan.</div>
+                    <div><i class="fa-solid fa-right-long"></i> <a href="/show" target="_blank">/show</a> Retrieve a JSON of all <a href="https://drive.google.com/file/d/1hpS57DvhMVJ_K3q38O6OsD3gQV7RqzqT/view?usp=sharing" target="_blank">33 default</a> food item data.</div>
                 </div>
             </div>
         </div>

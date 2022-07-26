@@ -13,17 +13,21 @@ async function loadFoodData() {
     document.querySelector('#calories').innerHTML = foodData.caloriesRequired;
 
     showitems.forEach((obj,index)=>{
+        document.querySelector(`.head${index}`).innerHTML = dates[index];
+        var dayCalSum = 0;
         category.forEach(ele => 
         {
             var options=``,totalcal=``;
             var calSum = 0;
             foodData.caloriesData[dates[index]][ele].forEach( item => {
                 options+= `
-                <div>🔘 ${item.foodItem[0]} <span style="font-weight:700">${item.quantity*100}g </span></div>
+                <div>🥣 ${item.foodItem[0]} <span style="font-weight:700">${item.quantity*100}g </span></div>
                 `;
                 calSum += parseInt(item.totalCalories);
                 totalcal+=`${parseInt(item.totalCalories)} `;
             });
+            dayCalSum += calSum;
+            console.log(dayCalSum)
             totalcal = totalcal.substring(0,totalcal.length-1);
             totalcal = totalcal.replace(/\s+/g,"+");
             totalcal += ` = ${calSum} cal`
@@ -33,10 +37,13 @@ async function loadFoodData() {
                     <div class="select">
                         ${options}
                     </div>
-                    <div class="totalCal"> ➡️ ${totalcal}</div>
+                    <div class="totalCal"><i class="fa-solid fa-calculator"></i> ${totalcal}</div>
                     
                 </div> `
-        });        
+        }); 
+        document.querySelector(`.tail${index}`).innerHTML = `
+        Total calories for day ${dates[index]} is ${dayCalSum} cal
+        `;  
     })
     for (let key in foodData.foodData){
         document.querySelector('.fooditems').innerHTML+=`

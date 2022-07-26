@@ -8,6 +8,12 @@
     display: flex;
     justify-content: center;
 }
+.tail{
+    margin: 5px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 0;
+}
 .dataShow div{
     display: flex;
     display: flex;

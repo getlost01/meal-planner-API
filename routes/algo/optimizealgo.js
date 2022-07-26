@@ -32,7 +32,6 @@ router.get('/',async(req,res)=>{
                         var caloriesData = {};
                         for (let key in mealplan){
                             caloriesData[key] = {};
-                            var tempcalReq = calReq; 
                             mealCategories.forEach(cat =>{
                                 var items = mealplan[key][cat].foodItems;
                                 var mainArray = [];
@@ -43,19 +42,26 @@ router.get('/',async(req,res)=>{
                                 })
                                 tempArr.sort(function(a,b){return b[1] - a[1]});
                                 var calReqCat = category[cat];
-                                tempArr.forEach(ele =>{
 
+                                tempArr.forEach(ele =>{
+                                  var quan = (calReqCat/ele[1]); 
+                                  quan = Math.min(10,parseInt(quan));
+                                  
+                                  calReqCat -= quan*ele[1];
+
+                                  mainArray.push({"foodItem":ele,"quantity":quan,"totalCalories":quan*ele[1]})
+                              })
+                                tempArr.forEach((ele,index )=>{ 
                                     var quan = (calReqCat/ele[1]);
                                     if(quan - parseInt(quan) >= 0.75) quan = parseInt(quan)+0.75;
                                     else if(quan - parseInt(quan) >= 0.50) quan = parseInt(quan)+0.50;
                                     else if(quan - parseInt(quan) >= 0.25) quan = parseInt(quan)+0.25;
                                     else quan = parseInt(quan);
                                     
-                                    calReqCat -= quan*ele[1];
-                                    tempcalReq -= quan*ele[1];  
+                                    calReqCat -= quan*ele[1]; 
 
-                                    if(quan)
-                                    mainArray.push({"foodItem":ele,"quantity":quan,"totalCalories":quan*ele[1]})
+                                    mainArray[index].quantity += quan;
+                                    mainArray[index].totalCalories += quan*ele[1];
                                 })
                                 caloriesData[key][cat] = mainArray;
                             })

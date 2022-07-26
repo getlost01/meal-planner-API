@@ -19,7 +19,7 @@ router.post('/',async(req,res,next)=>{
             const result = newUser.save();
         })
         
-        const myTimeout = setTimeout(()=>{res.render('createmeal');}, 3000)
+        const myTimeout = setTimeout(()=>{res.render('createmeal');}, 2000)
         
     } catch (error) {
     next(error)
