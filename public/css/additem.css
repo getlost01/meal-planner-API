@@ -1,7 +1,7 @@
 .con{
     display: flex;
     justify-content: center;
-    padding: 20px 10px;
+    padding: 10px 15px;
 }
 .infoCon{
     background-color: white;
@@ -22,10 +22,10 @@
 .info{
     text-align: center;
     font-size: 13px;
-    font-family: 10px;
-    color: #2e63bd;
+    color: #212529;
     font-weight: 700;
     padding: 3px;
+    cursor: pointer;
 }
 .hidden{
     display: none;

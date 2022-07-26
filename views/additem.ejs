@@ -15,6 +15,26 @@
 
 <body >
 
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Here is an informative popup</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div><strong>Step-1: </strong>Select any 20 or 20+ food items of your choice.</div>
+                <div><strong>Step-2: </strong>Create your 5 meals by using these 20+ food items.</div>
+                <div><strong>Step-3: </strong>Select meals for your meal plan for 2 days.</div>
+                <div><strong>Note: </strong>After step-1 you will be forwarded by POST requests so DO NOT RELOAD the page.</div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <div class="header row">
         <div class="progressBar">
                 <div class='progressInner'>
@@ -41,7 +61,7 @@
         <div class="spinner"></div>
     </div>
 
-        <div class="con ">
+        <div class="con hidden">
             <div class="col-12 col-md-9 p-2 infoCon">
                 <h3 class="center">Add your food items for next process</h3>
                 <form action="/addFoodItems" method="post">
@@ -50,7 +70,7 @@
 
                     </div>
                     <div class="selectArea"> Total  <span class="totalClick">0</span>  has been selected yet.</div>
-                    <div class="info">Please select atleast 20 fooditems for next process.</div>
+                    <div class="info" >For process info<span class="info text-blueCus" data-bs-target="#staticBackdrop" data-bs-toggle="modal" id="infobtn">click here</span>  </div>
                     <input type="text" name="jsonData" id="jsonData"class="hidden">
                     <div class="center">
                         <input type="submit" value="Next" disabled class="mybtn" id="mybtn">

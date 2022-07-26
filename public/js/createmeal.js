@@ -1,6 +1,10 @@
 const mealItems = document.querySelectorAll(".mealItems");
 const totalClick = document.querySelector(".totalClick");
 var foodData;
+document.querySelector(".loading-container").style.display="flex";
+var allCon = document.querySelectorAll(".con");
+setTimeout(()=>{document.querySelector(".loading-container").style.display="none";
+allCon.forEach(ele => { ele.classList.remove("hidden")});  }, 500);
 
 async function loadFoodData() {
     const response = await fetch('/api/fooditems');
@@ -58,3 +62,4 @@ document.querySelector("#mybtn").addEventListener('click',()=>{
     document.querySelector(".loading-container").style.display="flex";
     document.querySelector(".con").classList.add("hidden");
 })
+

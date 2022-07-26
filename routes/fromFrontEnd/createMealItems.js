@@ -17,7 +17,7 @@ router.post('/',async(req,res,next)=>{
                 const newMeal = new mealItems( obj );
                 const result = newMeal.save();
             }
-            setTimeout(()=>{res.render('createuser');}, 2000)
+            setTimeout(()=>{res.render('createuser');}, 1000)
         });
     } catch (error) {
     next(error)

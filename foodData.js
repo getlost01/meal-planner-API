@@ -244,7 +244,7 @@ export default {
   "vitamins": null
  },
  {
-  "name": "Coffe (Black)",
+  "name": "Coffee (Black)",
   "calories": null,
   "protein": null,
   "fat": null,

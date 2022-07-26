@@ -42,24 +42,30 @@ router.get('/',async(req,res)=>{
                                 })
                                 tempArr.sort(function(a,b){return b[1] - a[1]});
                                 var calReqCat = category[cat];
-
+                                var quan;
                                 tempArr.forEach(ele =>{
-                                  var quan = (calReqCat/ele[1]); 
+                                  if(ele[1]){
+                                   quan = (calReqCat/ele[1]); 
                                   quan = Math.min(10,parseInt(quan));
                                   
                                   calReqCat -= quan*ele[1];
-
+                                  }else{
+                                    quan = 0;
+                                  }
                                   mainArray.push({"foodItem":ele,"quantity":quan,"totalCalories":quan*ele[1]})
                               })
                                 tempArr.forEach((ele,index )=>{ 
-                                    var quan = (calReqCat/ele[1]);
+                                  if(ele[1]){
+                                    quan = (calReqCat/ele[1]);
                                     if(quan - parseInt(quan) >= 0.75) quan = parseInt(quan)+0.75;
                                     else if(quan - parseInt(quan) >= 0.50) quan = parseInt(quan)+0.50;
                                     else if(quan - parseInt(quan) >= 0.25) quan = parseInt(quan)+0.25;
                                     else quan = parseInt(quan);
                                     
                                     calReqCat -= quan*ele[1]; 
-
+                                  }else{
+                                    quan = 0;
+                                  }
                                     mainArray[index].quantity += quan;
                                     mainArray[index].totalCalories += quan*ele[1];
                                 })

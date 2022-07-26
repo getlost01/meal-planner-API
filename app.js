@@ -37,7 +37,9 @@ import createUserItemRoutes from './routes/fromFrontEnd/createUser.js';
 app.use('/createUser', createUserItemRoutes);
 
 import updatemealRoutes from './routes/patchAPI/createmealpatch.js';
-app.use('/createmealpatch', updatemealRoutes);
+app.use('/updatemeal', updatemealRoutes);
+
+app.get('/updatemealplan',(req, res)=>{ res.render('createuser',{response:"patch"});})
 
 //------- Algo
 
@@ -55,9 +57,6 @@ app.use('/api/createmeal', createMealRoutes);
 
 import usersRoutes from './routes/postAPI/user.js';
 app.use('/api/user', usersRoutes);
-
-app.get('/test',(req, res)=>{ res.render('createmeal');})
-app.get('/test1',(req, res)=>{ res.render('createuser');})
 
 app.get('*', (req, res)=>{
     res.render('error');

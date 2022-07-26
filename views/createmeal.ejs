@@ -33,11 +33,11 @@
         </div>
     </div>
 
-        <% if(local.response === "patch") {%> 
-            <form action="/createMealItem" method="post">
+        <% if(locals.response === "patch") {%> 
+            <form action="/updatemeal" method="post">
         <% } else {%>
-            <form action="/createmealpatch" method="post"><%}%>
-
+            <form action="/createMealItem" method="post"><%}%>
+                
         <!-- Modal -->
         <% for(var i=0;i<5;i++) {%> 
         <div class="modal fade" id="staticBackdrop<%= i+1 %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -54,13 +54,13 @@
                        </div>
                        <div class="personal-det">
                             <select name="category<%= i+1 %>" id="category<%= i+1 %>">
-                                <option value="">Select meal category</option>
-                                <option value="Breakfast">Breakfast</option>
-                                <option value="Lunch" selected>Lunch</option>
-                                <option value="Evening Snack">Evening Snack</option>
-                                <option value="Dinner">Dinner</option>
+                                <option <% if(locals.response === "patch") {%> <%= "disabled" %> <%}%> value="">Select meal category</option>
+                                <option  <% if(locals.response === "patch") {%> <%= "disabled" %> <%}%> value="Breakfast">Breakfast</option>
+                                <option  <% if(locals.response === "patch") {%> <%= "disabled" %> <%}%> value="Lunch" selected>Lunch</option>
+                                <option  <% if(locals.response === "patch") {%> <%= "disabled" %> <%}%> value="Evening Snack">Evening Snack</option>
+                                <option  <% if(locals.response === "patch") {%> <%= "disabled" %> <%}%> value="Dinner">Dinner</option>
                             </select>
-                            <input type="text" name="name<%= i+1 %>" id="name<%= i+1 %>" value="Meal <%= i+1 %>" placeholder="Enter meal name">
+                            <input type="text" name="name<%= i+1 %>" id="name<%= i+1 %>" <% if(locals.response === "patch") {%> <%= "readonly" %> <%}%> value="Tasty meal-<%= i+1 %>" placeholder="Enter meal name">
                        </div>
                 </div>
                 <div class="modal-footer">
@@ -80,10 +80,10 @@
             <div class="spinner"></div>
         </div>
 
-        <div class="con">
-            <div class="col-12 col-md-9 col-lg- 6 infoCon">
+        <div class="con hidden">
+            <div class="col-12 col-md-9 infoCon">
                 <h3 class="center">Create you 5 meals for next process.  </h3>
-                
+                <%=  %> 
                     <div class="mealCon">
 
                         <% for(var i=0;i<5;i++) {%> 
@@ -116,7 +116,7 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
 
-        <% if(local.response === "patch") {%> 
+        <% if(locals.response === "patch") {%> 
             <script src="/js/createmealpatch.js"></script>
         <% } else {%>
             <script src="/js/createmeal.js"></script><%}%>

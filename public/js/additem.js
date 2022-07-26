@@ -2,6 +2,16 @@ const foodItems = document.querySelector(".foodItems");
 const totalClick = document.querySelector(".totalClick");
 var foodData;
 
+if(!localStorage.getItem('firstTime')){
+document.querySelector("#infobtn").click();
+localStorage.setItem('firstTime',"Okdone");
+}
+
+document.querySelector(".loading-container").style.display="flex";
+var allCon = document.querySelectorAll(".con");
+setTimeout(()=>{document.querySelector(".loading-container").style.display="none";
+allCon.forEach(ele => { ele.classList.remove("hidden")});  }, 500);
+
 async function loadFoodData() {
     const response = await fetch('/show');
     foodData = await response.json();

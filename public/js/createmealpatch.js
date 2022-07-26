@@ -2,6 +2,11 @@ const mealItems = document.querySelectorAll(".mealItems");
 var foodData, mealData;
 var inputEle = ['#meal1','#meal2','#meal3','#meal4','#meal5'];
 
+document.querySelector(".loading-container").style.display="flex";
+var allCon = document.querySelectorAll(".con");
+setTimeout(()=>{document.querySelector(".loading-container").style.display="none";
+allCon.forEach(ele => { ele.classList.remove("hidden")});  }, 500);
+
 async function loadFoodData() {
     const response = await fetch('/api/fooditems');
     foodData = await response.json();

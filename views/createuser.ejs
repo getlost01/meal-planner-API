@@ -33,9 +33,15 @@
         </div>
     </div>
 
+    <div class="loading-container">
+        <p class="spinner-text">
+            loading...
+        </p>
+        <div class="spinner"></div>
+    </div>
 
     <form action="/createUser" method="post">
-        <div class="con">
+        <div class="con hidden">
             <div class="col-12 col-md-9 infoCon">
                 <h3 class="center"> Make meal plan for user. </h3>
                     <div class="dataInput">                                
@@ -69,7 +75,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
-        <% if(local.response === "patch") {%> 
+        <% if(locals.response === "patch") {%> 
         <script src="/js/createuserpatch.js"></script>
         <% } else {%>
         <script src="/js/createuser.js"></script> <%}%>
