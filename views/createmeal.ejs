@@ -49,14 +49,14 @@
                             
                        </div>
                        <div class="personal-det">
-                            <select name="category<%= i+1 %>" id="category<%= i+1 %>" value="Breakfast">
+                            <select name="category<%= i+1 %>" id="category<%= i+1 %>">
                                 <option value="">Select meal category</option>
                                 <option value="Breakfast">Breakfast</option>
-                                <option value="Lunch">Lunch</option>
+                                <option value="Lunch" selected>Lunch</option>
                                 <option value="Evening Snack">Evening Snack</option>
                                 <option value="Dinner">Dinner</option>
                             </select>
-                            <input type="text" name="name<%= i+1 %>" id="name<%= i+1 %>" placeholder="Enter meal name">
+                            <input type="text" name="name<%= i+1 %>" id="name<%= i+1 %>" value="Meal <%= i+1 %>" placeholder="Enter meal name">
                        </div>
                 </div>
                 <div class="modal-footer">
@@ -98,9 +98,7 @@
                     <input type="text" name="jsonData" id="jsonData"class="hidden">
                     <a class="infoData" href="/api/fooditems" target="_blank">View food item data</a>
                     <div class="center">
-                        <span class="d-inline-block mb-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Create all 5 meals for next Process">
-                            <input type="submit" value="Next" disabled class="mybtn" id="mybtn">
-                        </span>
+                        <input type="submit" value="Next" disabled class="mybtn" id="mybtn">
                     </div>
             </div>
         </div>
@@ -113,14 +111,6 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
         crossorigin="anonymous"></script>
         <script src="/js/createmeal.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function(){
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-            var popoverList = popoverTriggerList.map(function(element){
-                return new bootstrap.Popover(element);
-                    });
-                });
-        </script>
 
 </body>
 </html>

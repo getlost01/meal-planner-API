@@ -6,7 +6,6 @@ router.post('/',async(req,res,next)=>{
   try{
         foodItems.deleteMany({},function(err) {
             if (err) console.log(err)
-         });
 
         const data = req.body.fooditem;
         const jsonData = JSON.parse(req.body.jsonData).foodItemsData;
@@ -20,7 +19,7 @@ router.post('/',async(req,res,next)=>{
         })
         
         const myTimeout = setTimeout(()=>{res.render('createmeal');}, 2000)
-        
+        });
     } catch (error) {
     next(error)
     }

@@ -6,7 +6,7 @@ router.post('/',async(req,res,next)=>{
   try{
         mealItems.deleteMany({},function(err) {
             if (err) console.log(err)
-        });
+
         const responseData = req.body;
         for (let i = 1;i<6 ;++i) {
                 var obj = {
@@ -17,8 +17,8 @@ router.post('/',async(req,res,next)=>{
                 const newMeal = new mealItems( obj );
                 const result = newMeal.save();
             }
-            setTimeout(()=>{res.render('createuser');}, 5000)
-
+            setTimeout(()=>{res.render('createuser');}, 2000)
+        });
     } catch (error) {
     next(error)
     }

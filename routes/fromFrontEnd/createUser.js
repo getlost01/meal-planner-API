@@ -6,9 +6,10 @@ const router = express.Router();
 
 router.post('/',async(req,res)=>{
     
+    try{
     User.deleteMany({},function(err) {
-        if (err) console.log(err)
-    });
+        if (err) console.log(err);
+
 
     const data = req.body;
     var mealItemMap = {};
@@ -32,6 +33,11 @@ router.post('/',async(req,res)=>{
     const result = await newUser.save();
     res.redirect('/mealshow');
     });
+
+    });
+    } catch (error) {
+        next(error)
+    }
 })
 
 export default router;
