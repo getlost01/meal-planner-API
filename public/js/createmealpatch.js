@@ -43,7 +43,6 @@ async function loadFoodData() {
                     `
                 })
                 document.querySelector(`#meal${index+1}`).value = JSON.stringify(itemArray);
-                console.log(document.querySelector(`#meal${index+1}`).value);
                 document.querySelector(`.personalDet${index+1}`).innerHTML = `
                     Category : ${document.querySelector(`#category${index+1}`).value} &nbsp; &nbsp; &nbsp;
                     Name : ${document.querySelector(`#name${index+1}`).value}
@@ -68,7 +67,6 @@ function checkBtn(){
         document.querySelector("#mybtn").disabled = false;
     else
         document.querySelector("#mybtn").disabled = true;
-    console.log(count);
 }
 
 document.querySelector("#mybtn").addEventListener('click',()=>{

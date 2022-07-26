@@ -27,7 +27,6 @@ async function loadFoodData() {
                 totalcal+=`${parseInt(item.totalCalories)} `;
             });
             dayCalSum += calSum;
-            console.log(dayCalSum)
             totalcal = totalcal.substring(0,totalcal.length-1);
             totalcal = totalcal.replace(/\s+/g,"+");
             totalcal += ` = ${calSum} cal`
