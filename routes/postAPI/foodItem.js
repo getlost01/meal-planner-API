@@ -15,6 +15,11 @@ router.get('/',async(req,res)=>{
     });
 })
 
+// Note: This part of the code is only for the postman or other API post request sending platforms.
+// Firstly for evolve fit I am trying to create an API that automatically created a meal plan but due to lack of time and 
+// food data resources I quit that plan and create a simple user derive web app, so the part of code is a kind of not usable code.
+// Check algo , fromFrontEnd , patchAPI  and get part of postAPI routes. 
+
 router.post('/',async(req,res,next)=>{
   try{
         foodItems.deleteMany({},function(err) {
