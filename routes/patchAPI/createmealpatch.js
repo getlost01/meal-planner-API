@@ -2,9 +2,6 @@ import express from "express";
 import mealItems from'../../models/meal.js';
 const router = express.Router();
 
-router.get('/',async(req,res)=>{
-    res.render('createmeal',{response:"patch"});
-})
 router.post('/',async(req,res,next)=>{
   try{
         mealItems.find({}, function(err, mealItem) {

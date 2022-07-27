@@ -25,6 +25,10 @@ app.get('/show',(req,res,next)=>{
     res.send(foodData);
 })
 
+app.get('/test',(req,res,next)=>{
+    res.render('mealshow');
+})
+
 //------ Calling from FrontEnd
 
 import addItemsRoutes from './routes/fromFrontEnd/foodItemAdd.js';
@@ -39,14 +43,15 @@ app.use('/createUser', createUserItemRoutes);
 import updatemealRoutes from './routes/patchAPI/createmealpatch.js';
 app.use('/updatemeal', updatemealRoutes);
 
-app.get('/updatemealplan',(req, res)=>{ res.render('createuser',{response:"patch"});})
+app.post('/mealupdate',(req, res)=>{ res.render('createmeal',{response:"patch"});})
+
+app.post('/updatemealplan',(req, res)=>{ res.render('createuser',{response:"patch"});})
+
 
 //------- Algo
 
 import algoRoutes from './routes/algo/optimizealgo.js';
 app.use('/api/mealplan', algoRoutes);
-
-app.get('/mealshow',(req, res)=>{ res.render('mealshow');})
 
 // ------ APIs
 import foodItemsRoutes from './routes/postAPI/foodItem.js';

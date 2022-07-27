@@ -83,6 +83,18 @@
 .assumptions div{
     margin-bottom: 10px;
 }
+.butLink{
+    position: relative;
+    border: none;
+    outline: none;
+    margin: 0;
+    font-size: 14px;
+    margin-left: 3px;
+    background-color: transparent;
+    color: #2e63bd;
+    font-weight: 600;
+    padding: 0;
+}
 
 /* ---------- specific div section  */
 

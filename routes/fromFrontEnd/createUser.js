@@ -31,7 +31,7 @@ router.post('/',async(req,res)=>{
 
     const newUser = new User({ name: data.name ,  calorieRequirement: data.calories, mealPlan: obj});
     const result = await newUser.save();
-    const myTimeout = setTimeout(()=>{res.redirect('/mealshow');}, 1000);
+    const myTimeout = setTimeout(()=>{res.render('mealshow');}, 1000);
     });
 
     });
