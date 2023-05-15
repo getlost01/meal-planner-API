@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://mealplanner-aagam-version.herokuapp.com">
+  <a href="https://calm-sombrero-cod.cyclic.app/">
     <img src="https://firebasestorage.googleapis.com/v0/b/uiet-connect.appspot.com/o/mealPlanner.png?alt=media&token=417ea4a0-fd38-4971-b211-d3b5ae618bb2" height="96">
     <h3 align="center">Meal Planner</h3>
   </a>
