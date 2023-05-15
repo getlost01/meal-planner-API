@@ -43,6 +43,10 @@ app.use('/createUser', createUserItemRoutes);
 import updatemealRoutes from './routes/patchAPI/createmealpatch.js';
 app.use('/updatemeal', updatemealRoutes);
 
+app.get('/skip/showmeal', (req, res)=>{
+    res.render('mealshow');
+});
+
 app.post('/mealupdate',(req, res)=>{ res.render('createmeal',{response:"patch"});})
 
 app.post('/updatemealplan',(req, res)=>{ res.render('createuser',{response:"patch"});})
